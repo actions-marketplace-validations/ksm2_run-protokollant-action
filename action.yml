@@ -20,9 +20,9 @@ outputs:
   version:
     description: 'The new version of the application'
   previous-version:
-    description: 'The old version of the application'
+    description: 'The former version of the application'
   bump:
-    description: 'True, whether the version was bumped'
+    description: 'Whether the version was bumped'
 runs:
   using: 'node16'
   main: 'dist/index.js'
