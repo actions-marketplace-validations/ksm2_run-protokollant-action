@@ -1,0 +1,23 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: cp example/CHANGELOG.md .
+
+      - uses: ksm2/setup-protokollant-action@v1
+
+      - uses: ksm2/run-protokollant-action@main
+        id: protokollant
+        with:
+          bump: prerelease
+          unreleased: true
+
+      - name: Get the output version
+        run: |
+          echo "New version: ${{ steps.protokollant.outputs.version }}"
+          echo "Previous version: ${{ steps.protokollant.outputs.previous-version }}"
+          echo "Bump: ${{ steps.protokollant.outputs.bump }}"

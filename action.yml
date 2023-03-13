@@ -1,0 +1,28 @@
+name: 'Run Protokollant'
+description: 'Runs the Protokollant release tool'
+branding:
+  icon: bookmark
+  color: yellow
+inputs:
+  bump:
+    description: 'The bump to perform'
+    required: true
+  diff:
+    description: 'Whether to only export the diff'
+    default: 'false'
+  unreleased:
+    description: 'Whether to create a new unreleased section'
+    default: 'false'
+  no-changelog:
+    description: 'Whether to skip writing the changelog'
+    default: 'false'
+outputs:
+  version:
+    description: 'The new version of the application'
+  previous-version:
+    description: 'The old version of the application'
+  bump:
+    description: 'True, whether the version was bumped'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
