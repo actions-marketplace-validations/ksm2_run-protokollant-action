@@ -13,9 +13,9 @@ inputs:
   unreleased:
     description: 'Whether to create a new unreleased section'
     default: 'false'
-  no-changelog:
-    description: 'Whether to skip writing the changelog'
-    default: 'false'
+  changelog:
+    description: 'Whether to write to the changelog'
+    default: 'true'
 outputs:
   version:
     description: 'The new version of the application'

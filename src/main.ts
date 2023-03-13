@@ -11,7 +11,7 @@ async function main() {
   if (core.getBooleanInput('unreleased')) {
     args.push('--unreleased');
   }
-  if (core.getBooleanInput('no-changelog')) {
+  if (!core.getBooleanInput('changelog')) {
     args.push('--no-changelog');
   }
 
